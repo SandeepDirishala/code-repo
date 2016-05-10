@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Category Listing</title>
+</head>
+/* Setting this part into partials*/
+<!--<body ng-app="CategoryApp" ng-controller="categoryController">
+  <table>
+    <thead>
+      <tr><th colspan="4">Categories relations showing</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="category in categoryList | filter: searchFilter">">
+        <td>{{$index + 1}}</td>
+        <td>
+          <img src="img/flags/{{category.Category.nationality}}.png" />
+          {{category.Category.givenName}}&nbsp;{{category.Category.familyName}}
+        </td>
+        <td>{{category.Constructors[0].name}}</td>
+        <td>{{category.points}}</td>
+      </tr>
+    </tbody>
+  </table>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Category</title>
+</head>
+
+<body ng-app="categryApp">
+  <ng-view></ng-view>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
