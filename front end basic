@@ -1,0 +1,191 @@
+Good to use stuff
+Basic Stuff
+
+Margin: declares margin between html element and the elements around it.
+Padding: distance between the border of an html element and the content within it.
+Boarder: thin line of separation between margin and padding.
+Positioning: positioning properties are not inheritable how the elements are positioned (position:value)
+Fixed and Absolute: does not occupy any space on regular flow of the DOM ,but placed above the DOM, Fixed positioning wrt the window, Absolute is positioned relative to its first positioned (non static) ancestor element.
+Static and Relative: follows the regular flow and occupies space in the DOM, static cannot have top and right properties, Relative can have this properties. Relative is wrt its normal position
+Float : Float property changes how text and or images within an element are displayed. Float: value; (value can be left, right, none)
+Overflow: Control what elements contents will do if it overflows its boundaries. overflow:value; (value can be auto,hidden, visible,scroll)
+Z-index: to control the layer order of positioned elements. z-index:value;(value can be auto, number [higher the no hogher the level])
+Block: Creates a line break before and after the element
+Inline: No line break is created
+List Item: Creates a line break before and after the element and adds a list item marker.
+None: Makes an element not display on the page.
+text-shadow has h-shadow v-shadow blur and color
+CSS Flow 
+All CSS, HTML properties and tags listed 
+
+ HTML5
+
+HTML5 All tags listed 
+HTML5 Wow and the How 
+HTML5 Whats new 
+
+Good to Know Stuff
+
+ SASS
+
+Sass is a preprocessor that lets to use features like varibles, nesting, mixins, inheritance and save it out as a normal CSS
+
+Sass is an extension of CSS that adds power and elegance to basic language. It allows you to use
+
+Variables
+$ font-stack :Helvitica
+Partials
+_reset.scss in base.scss use @import ‘reset’    one scss to other scss file
+Mixins
+@mixin name($radius){border-radius:$radius }   .box {@include name(10px)
+Nesting
+nav{ul{} li{} a{}} rather than nav ul{} nav li{} nav a{} 
+Extend
+One selctor to other selector   @extend, literal meaning is to use a bunch of css properties from once selector to other
+SASS Basic Reference 
+Quick reference SASS doc
+
+ Borubon Neat
+
+Light weight semantic grid framework buily on top of Bourbon and Sass. It relies entirely on Sass Mixins
+
+ content coming up.....
+ Handlebars
+
+Handlebars provide the power necessary to let you build semantic templates effectively. Handlebar is a compiler built with javascript function. This derived javascript function then takes one parameter, an object-your data-and it returns a string with the HTML and the object properties'values inserted intot the HTML. There are three main pieces of code you use of Handlebars templating
+
+Handlebars expressions
+{{ content}} : content can be a variable or a helper function with or without parameters 
+{{article.title}}  :lookup the article property in the current context, then look for title in the result                     
+{{{content}}}  :if you don’t want handlebar to escape a value use {{{
+<div> Name :{{customerName}}</div> :customerName variable is a property that will be by the Handlebars.Compile function 
+Data (or Context)
+The data object is called the context; this object can be comprised of arrays (can use handlebars each helper), strings, numbers, other objects or a combination of all of these.
+The Handlebars Compile Function
+Compile the template with the Handlebars .compile function
+        Then use that compiled function to invoke the data object passed to it 
+ Handlebar built in helpers
+
+{{#each}}	to iterate over an array
+{{#if}}	It checks for truthy values such as true, any non-empty or non null value, it can not take conditional logic like if i>10, only checks for truthy values
+{{else}}	It can be used with the if block or any other block, cannot exist on its own
+{{#unless}}	The content between the unless block only renders if the unless expression evaluates to a falsy value
+{{#with}}	To target the specific property of the object, use with block to target the groupName property where we need access to its values
+ Handlebar custom helpers
+
+There are two typer of custom helpers: custom function helpers, custom block helpers
+
+Custom function helper is simply a helper that does not use a block, Custom helpers are created in the JavaScript code, not inside the Handlebars template
+
+register the function using Handlebars.registerHelper method
+This method takes a string (the name of the helper) as first parameter and function with any number of parameters as the second parameter
+Custom block helper is a helper with a block, When we register a custom block helper, Handlebars automatically adds an options object as the last parameter in the callback function. And the options object has an fn method, a hash object, and an inverse method.
+
+Custom block helper can be placed anywhere in the template, we can pass any number of parameters in the template
+Options.fn	takes in object as a parameter that it uses as a context
+Options.inverse	inverse method is used as the else section of any block statement
+Options.hash	Handlebars expressions take not only strings and variables as arguments, but you can pass key-value pairs separated by spaces as well. Invocation of the Handlebars expression with the key-value pairs as parameters will be added automatically onto the hash object in the helper callback function
+ Requirejs
+
+RequireJS takes a different approach to script loading than traditional <script> tags. While it can also run fast and optimize well, the primary goal is to encourage modular code. As part of that, it encourages using module IDs instead of URLs for script tags.
+
+<script data-main="scripts/main" src="scripts/require.js"> </script>
+data-main: is the attribute that tells require.js to load script/main.js after require.js loads
+
+Inside main.js you can use require() to load any other script that needs to run. This ensures a single point entry, since data-main script you specify is loaded asynchronously.
+
+require (["helper/util"], function(util) {
+}
+Require.js by default assumes that all dependencies are scripts, so it does not expect to see a trailing “.js” suffix on module IDs.
+
+Defining module: module is different from traditional script file; a well scoped object that avoids polluting the global namespace is defined.
+
+define(function () {
+ 
+  function method (x) {
+    return x + x;
+  }
+ 
+  return {
+    someValue: 'foobar',
+    myMethod: method
+  }
+});
+This code would make up the entirety of our JavaScript file for this module. Nothing should be declared outside of a single define call. If this code was saved in my/utils.js, this module would be defined as the module “my/utils”.
+
+Backbone
+
+Backbone.js gives structure to web applications by providing models with key-value binding and custom events,
+
+collections with a rich API of enumerable functions
+views with declarative event handling
+connects it all to your existing API over a RESTful JSON interface
+Detailed content of backbone model,event and view coming up....
+Marionette
+
+Backbone.Marionette is a composite application library for Backbone.js that aims to simplify the construction of large scale JavaScript applications. It is a collection of common design and implementation patterns found in applications.
+
+Detailed content coming up....
+jquery underscore
+
+for data manipulation : Underscore provides 80-odd functions that support both the usual functional suspects: map, select, invoke — as well as more specialized helpers: function binding, JavaScript templating, deep equality testing, and so on. It delegates to built-in functions, if present, so modern browsers will use the native implementations of forEach, map, reduce, filter, every, some and indexOf.
+
+Detailed content coming up....
+Grunt
+
+It’s a task runner, features: helps in Work in as small chunks of CSS and JavaScript, Compress your CSS and minify your JavaScript, Optimize your images
+
+Detailed content coming up....
+Angular
+
+Open source webframework aim for making development and testing tasks easier for web developers, it has no library dependencies. Angular teaches the browser how to be an ideal partner with any server technology by making use of dependency injection and inversion of control.
+
+Directives: used to create custom and reusable HTML components, which ca be used to hide complex DOM structure and decorate certain elements with behavior. Prefaced with ng-, all the Directives take place in HTML attributes and work as standalone elements.
+
+ng-app:	applications root element and placed in the or tags. is also used to declare a page as an angular application.
+ng-bind:	it replaces the text content of a HTML component with value of expression and updates the text content with the changes made in the value of that expression.
+ng-controller:	it is used to define a javascript controller class to evaluate HTML expressions.
+ng-model:	the ng-modal attribute is similar to ng-bind, except it is responsible for two-way data binding between the scope defined in the model and the view.
+ng-repeat:	It instantiates a template once per item, to which the loop variable is set, from a collection.
+ng-class:	this allows the class variable to load dynamically.
+ng-If:	This basic if statement is used to re-insert or eliminate an element from the DOM, depending on the condition is true or false.
+ng-hide and ng-show	according to Boolean expression’s value, these attributes conditionally display or hide element.
+Data-binding in Angular
+
+Data-binding is second most powerful feature in AngularJS, it eliminates unnecessary code for manipulating, traversing and listening to DOM events. Generally in most templating system, merge of template and model into a view happens one time, changes made into the model component and other sections of the view after this one time merge will not reflect In the model.
+
+In Angular two way data binding take place it automatically synchronizes the data between the model and view, and vice versa.
+
+Dependency Injection:AngularJS comes with built in injector that is in charge of creating components, looking for dependencies and passing them to other components when needed.
+
+In Angular templates are written with HTML, containing Angular-specific components and attributes.
+
+AngularJS Batarang is a chrome plug in for debugging angular applications on browser.
+
+XAMPP
+
+XAMPP stands for Cross-Platform (X), Apache (A), MySQL (M), PHP (P) and Perl (P). It is a simple, lightweight Apache distribution that makes it extremely easy for developers to create a local web server for testing purposes
+
+Apache: Apache is the actual web server application that processes and delivers web content to a computer. Apache is the most popular web server online, powering nearly 54% of all websites
+once installed go to this path and place the dist :
+
+C:\xampp\tomcat\webapps\ROOT 
+and start the tomcat server
+Tools
+
+beyond compare
+All Mix Fruit juice for Frontend technologies
+Drawing flow charts
+Place holder
+LoremPixel
+To create opaque images
+HTTP Explained
+
+HTTP Explained
+
+Is a request/response protocol between the browser(client) and the web server http request from client to the server contains all the information server needs to send the response HTTP GET:get requests asks for data and does not modify any data on the server, typing a url in the browser , clicking on the link HTTP Post: Post changes state on the server. posting status update on twitter , facebook, So after the post the server has more information than it had before post requests are usually initiated by a web form.
+HTTP Well explained *must read*
+HTTP Methods
+AJAX Explained
+
+Async javascript and xml
