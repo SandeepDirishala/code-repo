@@ -1,0 +1,10 @@
+div#datafrombestbuy img{
+    width:150px;
+    height: 250px;
+}
+
+div.back{
+    width: 400px;
+    min-height: 500px;
+    float: left;
+}
